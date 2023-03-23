@@ -1,0 +1,19 @@
+.ant-pagination {
+    .ant-pagination-item-active{
+        background: #1890FF;
+        border-radius: 4px;
+        border: none;
+        a {
+            color: #fff;
+        }
+    }
+    .ant-pagination-item-active:hover {
+        a{
+            color: #fff;
+        }
+    }
+}
+
+.article-pagination{
+    margin-bottom: 17px;
+}
