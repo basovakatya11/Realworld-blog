@@ -1,2 +1,3 @@
-import EditProfileForm from "./EditProfileForm";
+import EditProfileForm from './EditProfileForm'
+
 export default EditProfileForm

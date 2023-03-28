@@ -1,125 +1,128 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap');
 
-.article-form-card{
-    width: 938px;
-    background: #FFFFFF;
-    border: 1px solid #D9D9D9;
-    box-shadow: 0px 22px 106px rgba(0, 0, 0, 0.07), 0px 9.19107px 44.2843px rgba(0, 0, 0, 0.0503198), 0px 4.91399px 23.6765px rgba(0, 0, 0, 0.0417275), 0px 2.75474px 13.2728px rgba(0, 0, 0, 0.035), 0px 1.46302px 7.04911px rgba(0, 0, 0, 0.0282725), 0px 0.608796px 2.93329px rgba(0, 0, 0, 0.0196802);
-    border-radius: 6px;
+.article-form-card {
+  width: 938px;
+  background: #ffffff;
+  border: 1px solid #d9d9d9;
+  box-shadow: 0px 22px 106px rgba(0, 0, 0, 0.07), 0px 9.19107px 44.2843px rgba(0, 0, 0, 0.0503198),
+    0px 4.91399px 23.6765px rgba(0, 0, 0, 0.0417275), 0px 2.75474px 13.2728px rgba(0, 0, 0, 0.035),
+    0px 1.46302px 7.04911px rgba(0, 0, 0, 0.0282725), 0px 0.608796px 2.93329px rgba(0, 0, 0, 0.0196802);
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 48px 32px;
+  gap: 21px;
+  margin: 34px 0;
+  .title {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 28px;
+    color: #262626;
+  }
+  form {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    padding: 48px 32px;
     gap: 21px;
-    margin: 34px 0;
-    .title{
+    align-items: flex-start;
+    & > div {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      label {
+        font-size: 14px;
+        line-height: 22px;
+        color: #262626;
         font-family: 'Roboto';
         font-style: normal;
-        font-weight: 500;
-        font-size: 20px;
-        line-height: 28px;
-        color: #262626;
+        font-weight: 400;
+      }
+      input,
+      textarea {
+        border: 1px solid #d9d9d9;
+        border-radius: 4px;
+        padding: 8px 12px;
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+        &::placeholder {
+          color: #bfbfbf;
+        }
+        outline: none;
+        width: 874px;
+        height: 40px;
+      }
+      textarea {
+        min-height: 192px;
+      }
     }
-    form {
+    .error-message {
+      font-family: 'Roboto';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 22px;
+      color: #f5222d;
+    }
+    .send-button {
+      width: 319px;
+      height: 40px;
+      background: #1890ff;
+      border-radius: 4px;
+      border: none;
+      font-family: 'Roboto';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 24px;
+      color: #ffffff;
+      cursor: pointer;
+      margin-top: 9px;
+    }
+    .tags-field {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      div {
         display: flex;
-        flex-direction: column;
-        gap: 21px;
-        align-items: flex-start;
-        &>div {
-            display: flex;
-            flex-direction: column;
-            gap: 2px;
-            label{
-                font-size: 14px;
-                line-height: 22px;
-                color: #262626;
-                font-family: 'Roboto';
-                font-style: normal;
-                font-weight: 400;
-            }
-            input, textarea{
-                border: 1px solid #D9D9D9;
-                border-radius: 4px;
-                padding: 8px 12px;
-                font-family: 'Roboto';
-                font-style: normal;
-                font-weight: 400;
-                font-size: 16px;
-                line-height: 24px;
-                &::placeholder{
-                    color: #BFBFBF;
-                }
-                outline: none;
-                width: 874px;
-                height: 40px;
-            }
-            textarea{
-                min-height: 192px;
-            }
+        flex-direction: row;
+        gap: 17px;
+        input {
+          width: 300px;
         }
-        .error-message{
-            font-family: 'Roboto';
-            font-style: normal;
-            font-weight: 400;
-            font-size: 14px;
-            line-height: 22px;
-            color: #F5222D;
+        button {
+          width: 120px;
+          height: 40px;
+          font-family: 'Roboto';
+          font-style: normal;
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 24px;
+          background-color: transparent;
+          border-radius: 4px;
+          cursor: pointer;
         }
-        .send-button{
-            width: 319px;
-            height: 40px;
-            background: #1890FF;
-            border-radius: 4px;
-            border: none;
-            font-family: 'Roboto';
-            font-style: normal;
-            font-weight: 400;
-            font-size: 16px;
-            line-height: 24px;
-            color: #FFFFFF;
-            cursor: pointer;
-            margin-top: 9px;
+        .delete-tag-button {
+          border: 1px solid #f5222d;
+          color: #f5222d;
         }
-        .tags-field{
-            display: flex;
-            flex-direction: column;
-            gap: 5px;
-            div{
-                display: flex;
-                flex-direction: row;
-                gap: 17px;
-                input{
-                    width: 300px;
-                }
-                button{
-                    width: 120px;
-                    height: 40px;
-                    font-family: 'Roboto';
-                    font-style: normal;
-                    font-weight: 400;
-                    font-size: 16px;
-                    line-height: 24px;
-                    background-color: transparent;
-                    border-radius: 4px;
-                    cursor: pointer;
-                }
-                .delete-tag-button{
-                    border: 1px solid #F5222D;
-                    color: #F5222D;
-                }
-            }
-            .tags-list{
-                flex-direction: column-reverse;
-                gap: 5px;
-            }
-            .tags-list-and-button{
-                gap: 17px;
-                align-items: flex-end;
-                .add-tag-button{
-                    border: 1px solid #1890FF;
-                    color: #1890FF;
-                }
-            }
+      }
+      .tags-list {
+        flex-direction: column-reverse;
+        gap: 5px;
+      }
+      .tags-list-and-button {
+        gap: 17px;
+        align-items: flex-end;
+        .add-tag-button {
+          border: 1px solid #1890ff;
+          color: #1890ff;
         }
+      }
     }
+  }
 }

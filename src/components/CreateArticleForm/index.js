@@ -1,2 +1,3 @@
-import CreateArticleForm from "./CreateArticleForm";
+import CreateArticleForm from './CreateArticleForm'
+
 export default CreateArticleForm

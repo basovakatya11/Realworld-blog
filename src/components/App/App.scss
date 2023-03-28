@@ -2,7 +2,7 @@
 
 *,
 *::after,
-*::before{
+*::before {
   box-sizing: border-box;
 }
 
@@ -21,11 +21,11 @@ img {
   max-width: 100%;
 }
 
-body{
+body {
   min-height: 100vh;
-  background-color: #EBEEF3;
+  background-color: #ebeef3;
 }
-.app{
+.app {
   display: flex;
   flex-direction: column;
   justify-content: space-between;

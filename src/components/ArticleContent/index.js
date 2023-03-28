@@ -1,2 +1,3 @@
-import ArticleContent from "./ArticleContent";
+import ArticleContent from './ArticleContent'
+
 export default ArticleContent

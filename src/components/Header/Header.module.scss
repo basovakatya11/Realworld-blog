@@ -1,92 +1,90 @@
 %header-button {
+  width: 109px;
+  height: 51px;
+  border: none;
+  padding: 0;
+  background-color: transparent;
+  cursor: pointer;
+  font: inherit;
+}
+
+.header {
+  height: 80px;
+  width: 100%;
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: rgba(0, 0, 0, 0.85);
+  font-size: 18px;
+  line-height: 28px;
+  padding: 5px 22px;
+  .btn-sign-up {
+    @extend %header-button;
+    border: 1px solid #52c41a;
+    border-radius: 5px;
+    color: #52c41a;
+  }
+
+  .btn-sign-in {
+    @extend %header-button;
     width: 109px;
     height: 51px;
-    border: none;
-    padding: 0;
-    background-color: transparent;
-    cursor: pointer;
-    font: inherit;
-}
+    color: inherit;
+    margin-right: 15px;
+  }
 
-.header{
-    height: 80px;
-    width: 100%;
-    background-color: #fff;
+  .buttons-group {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    color: rgba(0, 0, 0, 0.85);
-    font-size: 18px;
-    line-height: 28px;
-    padding: 5px 22px;
-    .btn-sign-up{
-        @extend %header-button;
-        border: 1px solid #52C41A;
-        border-radius: 5px;
-        color: #52C41A;
-    }
-    
-    .btn-sign-in{
-        @extend %header-button;
-        width: 109px;
-        height: 51px;
-        color: inherit;
-        margin-right: 15px;
+    gap: 27px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+
+    .user-profile {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+      cursor: pointer;
+      .user-avatar {
+        width: 46px;
+        height: 46px;
+      }
+      .username {
+        font-size: 18px;
+        line-height: 28px;
+        color: rgba(0, 0, 0, 0.85);
+      }
     }
 
-    .buttons-group{
-        display: flex;
-        align-items: center;
-        gap: 27px;
-        font-family: 'Inter';
-        font-style: normal;
-        font-weight: 400;
-
-        .user-profile{
-            display: flex;
-            align-items: center;
-            gap: 13px;
-            cursor: pointer;
-            .user-avatar{
-                width: 46px;
-                height: 46px;
-            }
-            .username{
-                font-size: 18px;
-                line-height: 28px;
-                color: rgba(0, 0, 0, 0.85);
-            }
-        }
-
-        .btn-create-article{
-            font-family: 'Inter';
-            font-style: normal;
-            font-weight: 400;
-            width: 112.23px;
-            height: 31.1px;
-            border: 1px solid #52C41A;
-            border-radius: 5px;
-            background-color: transparent;
-            font-size: 14px;
-            line-height: 22px;
-            color: #52C41A;
-            cursor: pointer;
-        }
-        .btn-log-out{
-            font-family: 'Inter';
-            font-style: normal;
-            font-weight: 400;
-            font-size: 18px;
-            line-height: 28px;
-            cursor: pointer;
-            color: rgba(0, 0, 0, 0.75);
-            width: 109px;
-            height: 51px;
-            border: 1px solid rgba(0, 0, 0, 0.75);
-            border-radius: 5px;
-            background-color: transparent;
-        }
+    .btn-create-article {
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: 400;
+      width: 112.23px;
+      height: 31.1px;
+      border: 1px solid #52c41a;
+      border-radius: 5px;
+      background-color: transparent;
+      font-size: 14px;
+      line-height: 22px;
+      color: #52c41a;
+      cursor: pointer;
     }
+    .btn-log-out {
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 28px;
+      cursor: pointer;
+      color: rgba(0, 0, 0, 0.75);
+      width: 109px;
+      height: 51px;
+      border: 1px solid rgba(0, 0, 0, 0.75);
+      border-radius: 5px;
+      background-color: transparent;
+    }
+  }
 }
-
-

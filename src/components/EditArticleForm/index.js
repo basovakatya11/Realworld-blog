@@ -1,2 +1,3 @@
-import EditArticleForm from "./EditArticleForm";
+import EditArticleForm from './EditArticleForm'
+
 export default EditArticleForm

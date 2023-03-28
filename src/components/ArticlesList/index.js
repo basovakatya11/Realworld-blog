@@ -1,2 +1,3 @@
-import ArticlesList from "./ArticlesList";
+import ArticlesList from './ArticlesList'
+
 export default ArticlesList
