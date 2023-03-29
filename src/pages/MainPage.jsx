@@ -1,11 +1,11 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 
-import Header from '../Header'
-import ArticlesList from '../ArticlesList'
-import Pagination from '../Pagination'
-import Spin from '../Spin'
-import ErrorMessage from '../ErrorMessage'
+import Header from '../components/Header'
+import ArticlesList from '../components/ArticlesList'
+import Pagination from '../components/Pagination'
+import Spin from '../components/Spin'
+import ErrorMessage from '../components/ErrorMessage'
 
 export default function MainPage() {
   const isLoading = useSelector((state) => state.isLoading)

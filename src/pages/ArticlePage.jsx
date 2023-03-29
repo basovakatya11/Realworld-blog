@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
-import ArticleCard from '../ArticleCard'
-import Header from '../Header'
-import { getArticle } from '../../store/articlesSlice'
-import Spin from '../Spin'
+import ArticleCard from '../components/ArticleCard'
+import Header from '../components/Header'
+import { getArticle } from '../store/articlesSlice'
+import Spin from '../components/Spin'
 
 export default function ArticlePage({ id }) {
   const dispatch = useDispatch()

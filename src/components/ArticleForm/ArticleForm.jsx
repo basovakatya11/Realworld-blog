@@ -1,9 +1,11 @@
 import React, { useState, useRef, useEffect } from 'react'
 import { useForm } from 'react-hook-form'
+import { withRouter } from 'react-router-dom'
+import { useDispatch } from 'react-redux'
 
-import classes from './ArticleFormTemplate.module.scss'
+import classes from './ArticleForm.module.scss'
 
-export default function ArticleFormTemplate({ onSubmit, title, articleInfo = null }) {
+function ArticleForm({ history, match, title, articleInfo = null, updateArticle = null, createNewArticle = null }) {
   const {
     register,
     unregister,
@@ -16,6 +18,30 @@ export default function ArticleFormTemplate({ onSubmit, title, articleInfo = nul
   const onDeleteTag = (event) => {
     setTags((state) => state.filter((tag) => tag !== event.target.previousSibling.name))
     unregister(event.target.previousSibling.name)
+  }
+
+  const dispatch = useDispatch()
+  const onSubmit = (data) => {
+    const tagsArray = []
+    for (const key in data) {
+      if (key.startsWith('tag')) {
+        tagsArray.push(data[key])
+      }
+    }
+    const newArticle = {
+      title: data.title,
+      description: data.description,
+      body: data.text,
+      tagList: tagsArray,
+    }
+    if (updateArticle) {
+      dispatch(updateArticle({ updatedArticleInfo: newArticle, slug: match.params.id }))
+      history.push(`/articles/${match.params.id}/`)
+    }
+    if (createNewArticle) {
+      dispatch(createNewArticle(newArticle))
+      history.goBack()
+    }
   }
 
   useEffect(() => {
@@ -101,3 +127,5 @@ export default function ArticleFormTemplate({ onSubmit, title, articleInfo = nul
     </div>
   )
 }
+
+export default withRouter(ArticleForm)

@@ -2,10 +2,10 @@ import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Redirect } from 'react-router-dom'
 
-import Header from '../Header'
-import EditArticleForm from '../EditArticleForm/EditArticleForm'
-import { getArticle } from '../../store/articlesSlice'
-import Spin from '../Spin'
+import Header from '../components/Header'
+import ArticleForm from '../components/ArticleForm'
+import { getArticle, updateArticle } from '../store/articlesSlice'
+import Spin from '../components/Spin'
 
 export default function EditArticlePage({ id }) {
   const dispatch = useDispatch()
@@ -22,7 +22,7 @@ export default function EditArticlePage({ id }) {
   ) : (
     <>
       <Header />
-      <EditArticleForm />
+      <ArticleForm title="Edit article" articleInfo={article} updateArticle={updateArticle} />
     </>
   )
 }

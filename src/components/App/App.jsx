@@ -2,15 +2,15 @@ import React, { useEffect } from 'react'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 
-import MainPage from '../pages/MainPage'
-import ArticlePage from '../pages/ArticlePage'
-import SignInPage from '../pages/SignInPage'
-import SignUpPage from '../pages/SignUpPage'
-import EditProfilePage from '../pages/EditProfilePage'
-import CreateArticlePage from '../pages/CreateArticlePage'
+import MainPage from '../../pages/MainPage'
+import ArticlePage from '../../pages/ArticlePage'
+import SignInPage from '../../pages/SignInPage'
+import SignUpPage from '../../pages/SignUpPage'
+import EditProfilePage from '../../pages/EditProfilePage'
+import CreateArticlePage from '../../pages/CreateArticlePage'
 import './App.scss'
 import { fetchArticles, fetchArticlesAuthorised, setUser } from '../../store/articlesSlice'
-import EditArticlePage from '../pages/EditArticlePage'
+import EditArticlePage from '../../pages/EditArticlePage'
 
 export default function App() {
   const dispatch = useDispatch()

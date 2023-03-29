@@ -2,8 +2,9 @@ import React from 'react'
 import { Redirect } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 
-import Header from '../Header'
-import CreateArticleForm from '../CreateArticleForm'
+import Header from '../components/Header'
+import ArticleForm from '../components/ArticleForm'
+import { createNewArticle } from '../store/articlesSlice'
 
 export default function CreateArticlePage() {
   const user = useSelector((state) => state.user)
@@ -13,7 +14,7 @@ export default function CreateArticlePage() {
   return (
     <>
       <Header />
-      <CreateArticleForm />
+      <ArticleForm title="Create new article" createNewArticle={createNewArticle} />
     </>
   )
 }
