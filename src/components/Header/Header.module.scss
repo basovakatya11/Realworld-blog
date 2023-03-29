@@ -19,6 +19,9 @@
   font-size: 18px;
   line-height: 28px;
   padding: 5px 22px;
+  .title{
+    cursor: pointer;
+  }
   .btn-sign-up {
     @extend %header-button;
     border: 1px solid #52c41a;

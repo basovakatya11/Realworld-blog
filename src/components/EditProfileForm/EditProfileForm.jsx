@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useForm } from 'react-hook-form'
 import { useDispatch, useSelector } from 'react-redux'
 
@@ -11,9 +11,10 @@ export default function EditProfileForm() {
     register,
     handleSubmit,
     formState: { errors },
-    reset,
+    setValue,
   } = useForm()
   const error = useSelector((state) => state.error.editProfileError)
+  const user = useSelector((state) => state.user)
   const dispatch = useDispatch()
   const onSubmit = (data) => {
     const updatedUserInfo = {}
@@ -23,8 +24,22 @@ export default function EditProfileForm() {
       }
     }
     dispatch(editProfile(updatedUserInfo))
-    reset()
+    // if (!error) {
+    //   messageApi.open({
+    //     type: 'success',
+    //     content: 'The data has been sent',
+    //   })
+    // }
   }
+
+  useEffect(() => {
+    if (user) {
+      setValue('username', user.username)
+      setValue('email', user.email)
+      if (user.image) setValue('image', user.image)
+    }
+  }, [setValue, user])
+
   const errorMessage = error ? (
     <div className={classes['error-message']}>Edit profile error, please try later, details: {error}</div>
   ) : null
