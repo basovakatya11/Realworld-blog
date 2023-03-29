@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import { useForm } from 'react-hook-form'
 import { useDispatch, useSelector } from 'react-redux'
+import { message } from 'antd'
 
 import { editProfile } from '../../store/articlesSlice'
 
@@ -16,6 +17,7 @@ export default function EditProfileForm() {
   const error = useSelector((state) => state.error.editProfileError)
   const user = useSelector((state) => state.user)
   const dispatch = useDispatch()
+  const [messageApi, contextHolder] = message.useMessage()
   const onSubmit = (data) => {
     const updatedUserInfo = {}
     for (const key in data) {
@@ -24,13 +26,17 @@ export default function EditProfileForm() {
       }
     }
     dispatch(editProfile(updatedUserInfo))
-    // if (!error) {
-    //   messageApi.open({
-    //     type: 'success',
-    //     content: 'The data has been sent',
-    //   })
-    // }
+    messageApi.info('Data has been sent')
   }
+
+  useEffect(() => {
+    if (error) {
+      messageApi.open({
+        type: 'error',
+        content: 'Edit profile error',
+      })
+    }
+  }, [error])
 
   useEffect(() => {
     if (user) {
@@ -45,6 +51,7 @@ export default function EditProfileForm() {
   ) : null
   return (
     <div className={classes['edit-profile-form']}>
+      {contextHolder}
       <div className={classes.title}>Edit Profile</div>
       <form onSubmit={handleSubmit(onSubmit)}>
         <div>

@@ -253,6 +253,9 @@ const articlesSlice = createSlice({
     setUser(state, action) {
       state.user = { ...action.payload }
     },
+    clearError(state, action) {
+      state.error[action.payload] = null
+    },
   },
   extraReducers: {
     [fetchArticles.pending]: onLoading('fetchArticlesError'),
@@ -341,5 +344,5 @@ const articlesSlice = createSlice({
   },
 })
 
-export const { changePageNumber, logOut, setUser, deleteArticleInList } = articlesSlice.actions
+export const { changePageNumber, logOut, setUser, deleteArticleInList, clearError } = articlesSlice.actions
 export default articlesSlice.reducer

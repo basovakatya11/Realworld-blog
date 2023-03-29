@@ -3,23 +3,23 @@ import { withRouter } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 
 import avatar from '../../assets/images/user-avatar.png'
-import { logOut } from '../../store/articlesSlice'
+import { logOut, clearError } from '../../store/articlesSlice'
 
 import classes from './Header.module.scss'
 
 function Header({ history }) {
   const user = useSelector((state) => state.user)
   const dispatch = useDispatch()
+  const onProfileClick = () => {
+    history.push('/profile')
+    dispatch(clearError('editProfileError'))
+  }
   const buttonsGroup = user.token ? (
     <div className={classes['buttons-group']}>
       <button type="button" className={classes['btn-create-article']} onClick={() => history.push('/new-article')}>
         Create article
       </button>
-      <div
-        className={classes['user-profile']}
-        onClick={() => history.push('/profile')}
-        onKeyDown={() => history.push('/profile')}
-      >
+      <div className={classes['user-profile']} onClick={onProfileClick} onKeyDown={onProfileClick}>
         <div className={classes.username}>{user.username}</div>
         <div className={classes['user-avatar']}>
           <img src={user.image ? user.image : avatar} alt="User's avatar" />
